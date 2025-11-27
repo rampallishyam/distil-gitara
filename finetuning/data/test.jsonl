@@ -1,0 +1,116 @@
+{"question": "check out HEAD~3 in detached mode", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"HEAD~3\", \"detach\": true}}"}
+{"question": "pull latest changes from origin (don\u2019t rebase)", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"rebase\": false}}"}
+{"question": "mixed reset to v2.0.0", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"mixed\", \"target\": \"v2.0.0\"}}"}
+{"question": "discard local changes to package-lock.json", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"package-lock.json\"], \"source\": \"HEAD\", \"restore_target\": \"worktree\"}}"}
+{"question": "commit feat: dark mode toggle", "answer": "{\"name\": \"git_commit\", \"parameters\": {\"message\": \"feat: dark mode toggle\"}}"}
+{"question": "show all branches (locals + remotes)", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"list\", \"all\": true}}"}
+{"question": "amend last commit with new message 'chore: tweak formatting'", "answer": "{\"name\": \"git_commit\", \"parameters\": {\"amend\": true, \"message\": \"chore: tweak formatting\"}}"}
+{"question": "restore docs/ from origin/main for both staged and working tree", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"docs/\"], \"source\": \"origin/main\", \"restore_target\": \"both\"}}"}
+{"question": "log for tag v2.0.0", "answer": "{\"name\": \"git_log\", \"parameters\": {\"ref\": \"v2.0.0\"}}"}
+{"question": "show last 3 commits as one-liners", "answer": "{\"name\": \"git_log\", \"parameters\": {\"limit\": 3, \"oneline\": true}}"}
+{"question": "force delete wip-temp branch", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"delete\", \"branch_name\": \"wip-temp\", \"force\": true}}"}
+{"question": "pull from origin/dev using merge (default)", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"branch\": \"dev\"}}"}
+{"question": "put src/config.ts back into staging from main", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"src/config.ts\"], \"source\": \"main\", \"restore_target\": \"staged\"}}"}
+{"question": "oneline log", "answer": "{\"name\": \"git_log\", \"parameters\": {\"oneline\": true}}"}
+{"question": "pull origin feature-x without rebasing", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"branch\": \"feature-x\", \"rebase\": false}}"}
+{"question": "what changed? quick summary", "answer": "{\"name\": \"git_status\", \"parameters\": {}}"}
+{"question": "commit: chore(ci): bump actions", "answer": "{\"name\": \"git_commit\", \"parameters\": {\"message\": \"chore(ci): bump actions\"}}"}
+{"question": "list branches (locals only)", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"list\"}}"}
+{"question": "jump to branch staging", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"staging\"}}"}
+{"question": "merge develop into my current branch (create merge commit even if ff)", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"develop\", \"no_ff\": true}}"}
+{"question": "list my stashes", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"list\"}}"}
+{"question": "push main and set upstream", "answer": "{\"name\": \"git_push\", \"parameters\": {\"branch\": \"main\", \"set_upstream\": true}}"}
+{"question": "merge feature/landing with a merge commit (no-ff)", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"feature/landing\", \"no_ff\": true}}"}
+{"question": "push my work up to origin", "answer": "{\"name\": \"git_push\", \"parameters\": {}}"}
+{"question": "push to remote named fork on branch test-fixes", "answer": "{\"name\": \"git_push\", \"parameters\": {\"remote\": \"fork\", \"branch\": \"test-fixes\"}}"}
+{"question": "pull upstream/main and rebase my changes", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"remote\": \"upstream\", \"branch\": \"main\", \"rebase\": true}}"}
+{"question": "stash with note 'checkpoint'", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"save\", \"message\": \"checkpoint\"}}"}
+{"question": "I forgot to write a good message\u2014can I update the last commit message?", "answer": "{\"name\": \"git_commit\", \"parameters\": {\"amend\": true}}"}
+{"question": "delete branch experiment/login", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"delete\", \"branch_name\": \"experiment/login\"}}"}
+{"question": "rebase my work on top of origin/main while pulling", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"branch\": \"main\", \"rebase\": true}}"}
+{"question": "merge main into this branch (ff only)", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"main\", \"ff_only\": true}}"}
+{"question": "stash include untracked: 'WIP tests'", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"save\", \"message\": \"WIP tests\", \"include_untracked\": true}}"}
+{"question": "remove branch docs-typo", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"delete\", \"branch_name\": \"docs-typo\"}}"}
+{"question": "clear all stashes", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"clear\"}}"}
+{"question": "merge integration branch using resolve strategy", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"integration\", \"strategy\": \"resolve\"}}"}
+{"question": "abort the rebase and go back", "answer": "{\"name\": \"git_rebase\", \"parameters\": {\"abort\": true}}"}
+{"question": "new branch hotfix/session-timeout and switch", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"hotfix/session-timeout\", \"create\": true}}"}
+{"question": "push current branch to origin/main", "answer": "{\"name\": \"git_push\", \"parameters\": {\"branch\": \"main\"}}"}
+{"question": "make staged version of src/index.js match main", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"src/index.js\"], \"source\": \"main\", \"restore_target\": \"staged\"}}"}
+{"question": "abort rebase", "answer": "{\"name\": \"git_rebase\", \"parameters\": {\"abort\": true}}"}
+{"question": "restore settings.json to what it was in HEAD", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"settings.json\"], \"source\": \"HEAD\", \"restore_target\": \"worktree\"}}"}
+{"question": "push current branch and set upstream", "answer": "{\"name\": \"git_push\", \"parameters\": {\"set_upstream\": true}}"}
+{"question": "stage dotfiles: .env.example and .nvmrc", "answer": "{\"name\": \"git_add\", \"parameters\": {\"files\": [\".env.example\", \".nvmrc\"]}}"}
+{"question": "switch to develop", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"develop\"}}"}
+{"question": "How can I see what I\u2019ve changed and what\u2019s about to be committed?", "answer": "{\"name\": \"git_status\", \"parameters\": {}}"}
+{"question": "mixed reset to previous commit (HEAD~1)", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"mixed\", \"target\": \"HEAD~1\"}}"}
+{"question": "stash everything with note 'WIP login form' (include untracked)", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"save\", \"message\": \"WIP login form\", \"include_untracked\": true}}"}
+{"question": "delete feature/old-ui (safe delete)", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"delete\", \"branch_name\": \"feature/old-ui\", \"force\": false}}"}
+{"question": "status with diffs only", "answer": "{\"name\": \"git_status\", \"parameters\": {\"verbose\": true}}"}
+{"question": "clear all stashes now", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"clear\"}}"}
+{"question": "pop latest stash and remove it", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"pop\"}}"}
+{"question": "mixed reset to HEAD (default)", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"mixed\"}}"}
+{"question": "continue rebase after fixing conflicts", "answer": "{\"name\": \"git_rebase\", \"parameters\": {\"continue\": true}}"}
+{"question": "show last 20 commits with graph", "answer": "{\"name\": \"git_log\", \"parameters\": {\"limit\": 20, \"graph\": true}}"}
+{"question": "rebase this branch onto feature/new-parser", "answer": "{\"name\": \"git_rebase\", \"parameters\": {\"target\": \"feature/new-parser\"}}"}
+{"question": "commit with message \u2018update docs\u2019", "answer": "{\"name\": \"git_commit\", \"parameters\": {\"message\": \"update docs\"}}"}
+{"question": "add just src/components/Button.tsx", "answer": "{\"name\": \"git_add\", \"parameters\": {\"files\": [\"src/components/Button.tsx\"]}}"}
+{"question": "show stash@{3} without full patch (summary only)", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"show\", \"stash_ref\": \"stash@{3}\", \"patch\": false}}"}
+{"question": "rebase onto commit 1a2b3c4", "answer": "{\"name\": \"git_rebase\", \"parameters\": {\"target\": \"1a2b3c4\"}}"}
+{"question": "soft reset to HEAD~1", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"soft\", \"target\": \"HEAD~1\"}}"}
+{"question": "pull just origin with rebase (current branch)", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"rebase\": true}}"}
+{"question": "apply stash number 2 but keep it", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"apply\", \"stash_ref\": \"stash@{2}\"}}"}
+{"question": "merge feature/ui but force a merge commit", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"feature/ui\", \"no_ff\": true}}"}
+{"question": "rebase my branch onto main", "answer": "{\"name\": \"git_rebase\", \"parameters\": {\"target\": \"main\"}}"}
+{"question": "add files with spaces: 'docs/Release Notes.md' and 'Roadmap 2025.md'", "answer": "{\"name\": \"git_add\", \"parameters\": {\"files\": [\"docs/Release Notes.md\", \"Roadmap 2025.md\"]}}"}
+{"question": "soft reset to origin/release", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"soft\", \"target\": \"origin/release\"}}"}
+{"question": "checkout commit 123abc", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"123abc\"}}"}
+{"question": "continue the rebase after resolving conflicts", "answer": "{\"name\": \"git_rebase\", \"parameters\": {\"continue\": true}}"}
+{"question": "hard reset to commit 7c9d2ef", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"hard\", \"target\": \"7c9d2ef\"}}"}
+{"question": "Show me everything I changed, including the stuff Git is ignoring.", "answer": "{\"name\": \"git_status\", \"parameters\": {\"verbose\": true, \"ignored\": true}}"}
+{"question": "put main's version of styles.css into staging", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"styles.css\"], \"source\": \"main\", \"restore_target\": \"staged\"}}"}
+{"question": "show my stashes", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"list\"}}"}
+{"question": "make and switch to new branch feature/cart", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"feature/cart\", \"create\": true}}"}
+{"question": "delete old branch release/0.9 (no force)", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"delete\", \"branch_name\": \"release/0.9\", \"force\": false}}"}
+{"question": "view commit abcdef1 without creating a branch", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"abcdef1\", \"detach\": true}}"}
+{"question": "merge feature/payments into this branch", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"feature/payments\"}}"}
+{"question": "Add README and package.json to commit.", "answer": "{\"name\": \"git_add\", \"parameters\": {\"files\": [\"README\", \"package.json\"]}}"}
+{"question": "force push current branch to fork and set upstream", "answer": "{\"name\": \"git_push\", \"parameters\": {\"remote\": \"fork\", \"force\": true, \"set_upstream\": true}}"}
+{"question": "detach HEAD at current commit (just look around)", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"detach\": true}}"}
+{"question": "stash without message", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"save\"}}"}
+{"question": "log last 5 commits with graph", "answer": "{\"name\": \"git_log\", \"parameters\": {\"limit\": 5, \"graph\": true}}"}
+{"question": "revert changes to server.js in my working tree only", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"server.js\"], \"restore_target\": \"worktree\"}}"}
+{"question": "pop stash@{0}", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"pop\", \"stash_ref\": \"stash@{0}\"}}"}
+{"question": "amend last commit, keep message but include staged changes", "answer": "{\"name\": \"git_commit\", \"parameters\": {\"amend\": true}}"}
+{"question": "fast-forward only merge release/1.2", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"release/1.2\", \"ff_only\": true}}"}
+{"question": "force push my current branch to origin", "answer": "{\"name\": \"git_push\", \"parameters\": {\"force\": true}}"}
+{"question": "restore both staged and working copy for src/api.ts from origin/dev", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"src/api.ts\"], \"source\": \"origin/dev\", \"restore_target\": \"both\"}}"}
+{"question": "drop stash@{1}", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"drop\", \"stash_ref\": \"stash@{1}\"}}"}
+{"question": "pull from upstream release and rebase", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"remote\": \"upstream\", \"branch\": \"release\", \"rebase\": true}}"}
+{"question": "push to upstream for branch release/1.0", "answer": "{\"name\": \"git_push\", \"parameters\": {\"branch\": \"release/1.0\", \"set_upstream\": true}}"}
+{"question": "bring back src/app.ts from two commits ago", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"src/app.ts\"], \"source\": \"HEAD~2\"}}"}
+{"question": "soft reset to previous commit", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"soft\", \"target\": \"HEAD~1\"}}"}
+{"question": "list all branches", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"list\"}}"}
+{"question": "only show ignored stuff too", "answer": "{\"name\": \"git_status\", \"parameters\": {\"ignored\": true}}"}
+{"question": "one-line history for staging branch (20 entries)", "answer": "{\"name\": \"git_log\", \"parameters\": {\"ref\": \"staging\", \"limit\": 20, \"oneline\": true}}"}
+{"question": "reset back two commits but keep my changes", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"mixed\", \"target\": \"HEAD~2\"}}"}
+{"question": "add everything in the folder", "answer": "{\"name\": \"git_add\", \"parameters\": {\"files\": [\".\"]}}"}
+{"question": "show what is in the most recent stash (diff)", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"show\", \"patch\": true}}"}
+{"question": "drop stash 3", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"drop\", \"stash_ref\": \"stash@{3}\"}}"}
+{"question": "stage all changes", "answer": "{\"name\": \"git_add\", \"parameters\": {\"files\": [\".\"]}}"}
+{"question": "quick status (no diffs, no ignored)", "answer": "{\"name\": \"git_status\", \"parameters\": {}}"}
+{"question": "log with graph for origin/dev (15 commits)", "answer": "{\"name\": \"git_log\", \"parameters\": {\"ref\": \"origin/dev\", \"limit\": 15, \"graph\": true}}"}
+{"question": "hard reset to tag release-2025.09", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"hard\", \"target\": \"release-2025.09\"}}"}
+{"question": "force push to origin feature/auth and set upstream too", "answer": "{\"name\": \"git_push\", \"parameters\": {\"remote\": \"origin\", \"branch\": \"feature/auth\", \"force\": true, \"set_upstream\": true}}"}
+{"question": "merge experimental/solver using recursive strategy", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"experimental/solver\", \"strategy\": \"recursive\"}}"}
+{"question": "merge docs into this branch using resolve strategy", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"docs\", \"strategy\": \"resolve\"}}"}
+{"question": "full status with diffs and ignored files", "answer": "{\"name\": \"git_status\", \"parameters\": {\"verbose\": true, \"ignored\": true}}"}
+{"question": "list remote branches too", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"list\", \"all\": true}}"}
+{"question": "add everything in src/ and tests/", "answer": "{\"name\": \"git_add\", \"parameters\": {\"files\": [\"src/\", \"tests/\"]}}"}
+{"question": "push to backup repo on branch staging and set upstream", "answer": "{\"name\": \"git_push\", \"parameters\": {\"remote\": \"backup\", \"branch\": \"staging\", \"set_upstream\": true}}"}
+{"question": "pull latest from origin (merge, not rebase)", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"rebase\": false}}"}
+{"question": "make a commit that says 'feat: add search box'", "answer": "{\"name\": \"git_commit\", \"parameters\": {\"message\": \"feat: add search box\"}}"}
+{"question": "inspect commit d34db33 without a branch (detached)", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"d34db33\", \"detach\": true}}"}
+{"question": "grab README.md from tag v3.0", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"README.md\"], \"source\": \"v3.0\"}}"}
+{"question": "compact one-line history of main", "answer": "{\"name\": \"git_log\", \"parameters\": {\"ref\": \"main\", \"oneline\": true}}"}
+{"question": "switch to a new bugfix branch hotfix-404", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"hotfix-404\", \"create\": true}}"}

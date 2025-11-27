@@ -1,0 +1,43 @@
+{"question": "apply stash@{5}", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"apply\", \"stash_ref\": \"stash@{5}\"}}"}
+{"question": "merge vendor branch preferring ours", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"vendor\", \"strategy\": \"ours\"}}"}
+{"question": "commit fix: typos", "answer": "{\"name\": \"git_commit\", \"parameters\": {\"message\": \"fix: typos\"}}"}
+{"question": "pull from upstream main and rebase", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"remote\": \"upstream\", \"branch\": \"main\", \"rebase\": true}}"}
+{"question": "hard reset to HEAD (discard everything staged/working)", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"hard\"}}"}
+{"question": "restore both working copy and staged for README.md from tag v1.2.0", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"README.md\"], \"source\": \"v1.2.0\", \"restore_target\": \"both\"}}"}
+{"question": "undo changes to Dockerfile, use main version", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"Dockerfile\"], \"source\": \"main\"}}"}
+{"question": "amend last commit (keep the same message)", "answer": "{\"name\": \"git_commit\", \"parameters\": {\"amend\": true}}"}
+{"question": "merge vendor subtree using subtree strategy", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"vendor\", \"strategy\": \"subtree\"}}"}
+{"question": "show local branches only", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"list\"}}"}
+{"question": "pull and rebase onto origin/main", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"branch\": \"main\", \"rebase\": true}}"}
+{"question": "push feature-x to origin, force and track it", "answer": "{\"name\": \"git_push\", \"parameters\": {\"remote\": \"origin\", \"branch\": \"feature-x\", \"force\": true, \"set_upstream\": true}}"}
+{"question": "create and switch to feature/ai-search", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"feature/ai-search\", \"create\": true}}"}
+{"question": "what's in the latest stash (no patch)", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"show\"}}"}
+{"question": "delete bug/old-123 even if not merged", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"delete\", \"branch_name\": \"bug/old-123\", \"force\": true}}"}
+{"question": "stage all Markdown files (*.md)", "answer": "{\"name\": \"git_add\", \"parameters\": {\"files\": [\"*.md\"]}}"}
+{"question": "stash my work with message \u2018WIP refactor user service\u2019, include untracked files", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"save\", \"message\": \"WIP refactor user service\", \"include_untracked\": true}}"}
+{"question": "apply latest stash but don\u2019t drop it", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"apply\"}}"}
+{"question": "view history for branch feature/checkout with graph and normal lines", "answer": "{\"name\": \"git_log\", \"parameters\": {\"ref\": \"feature/checkout\", \"graph\": true}}"}
+{"question": "show detailed status but not ignored files", "answer": "{\"name\": \"git_status\", \"parameters\": {\"verbose\": true}}"}
+{"question": "detach HEAD right here (no branch)", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"detach\": true}}"}
+{"question": "rebase onto origin/main", "answer": "{\"name\": \"git_rebase\", \"parameters\": {\"target\": \"origin/main\"}}"}
+{"question": "show which files will be committed (don\u2019t need diffs)", "answer": "{\"name\": \"git_status\", \"parameters\": {}}"}
+{"question": "commit fix: handle empty input", "answer": "{\"name\": \"git_commit\", \"parameters\": {\"message\": \"fix: handle empty input\"}}"}
+{"question": "continue rebase now", "answer": "{\"name\": \"git_rebase\", \"parameters\": {\"continue\": true}}"}
+{"question": "restore index.html from last commit (but don\u2019t touch staged)", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"index.html\"], \"source\": \"HEAD\", \"restore_target\": \"worktree\"}}"}
+{"question": "merge release/2.0 here and allow fast-forward only", "answer": "{\"name\": \"git_merge\", \"parameters\": {\"branch\": \"release/2.0\", \"ff_only\": true}}"}
+{"question": "push to whatever my upstream is (origin)", "answer": "{\"name\": \"git_push\", \"parameters\": {}}"}
+{"question": "add src/index.ts and src/utils.ts", "answer": "{\"name\": \"git_add\", \"parameters\": {\"files\": [\"src/index.ts\", \"src/utils.ts\"]}}"}
+{"question": "soft reset to tag v1.0.0 (keep staged changes)", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"soft\", \"target\": \"v1.0.0\"}}"}
+{"question": "list every branch including remotes", "answer": "{\"name\": \"git_branch\", \"parameters\": {\"action\": \"list\", \"all\": true}}"}
+{"question": "switch to main", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"main\"}}"}
+{"question": "show diffs but skip ignored stuff", "answer": "{\"name\": \"git_status\", \"parameters\": {\"verbose\": true}}"}
+{"question": "show diff for stash@{2}", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"show\", \"stash_ref\": \"stash@{2}\", \"patch\": true}}"}
+{"question": "push dev branch to backup remote and track it", "answer": "{\"name\": \"git_push\", \"parameters\": {\"remote\": \"backup\", \"branch\": \"dev\", \"set_upstream\": true}}"}
+{"question": "bring back multiple files from a commit 9b2a7c1", "answer": "{\"name\": \"git_restore\", \"parameters\": {\"files\": [\"src/app.ts\", \"src/lib.ts\"], \"source\": \"9b2a7c1\"}}"}
+{"question": "force push beta to backup", "answer": "{\"name\": \"git_push\", \"parameters\": {\"remote\": \"backup\", \"branch\": \"beta\", \"force\": true}}"}
+{"question": "pull origin/staging into this branch", "answer": "{\"name\": \"git_pull\", \"parameters\": {\"branch\": \"staging\"}}"}
+{"question": "hard reset to origin/main", "answer": "{\"name\": \"git_reset\", \"parameters\": {\"mode\": \"hard\", \"target\": \"origin/main\"}}"}
+{"question": "pop second stash", "answer": "{\"name\": \"git_stash\", \"parameters\": {\"action\": \"pop\", \"stash_ref\": \"stash@{1}\"}}"}
+{"question": "show 8 commits for current branch with graph", "answer": "{\"name\": \"git_log\", \"parameters\": {\"limit\": 8, \"graph\": true}}"}
+{"question": "switch to branch hotfix-404", "answer": "{\"name\": \"git_switch\", \"parameters\": {\"branch\": \"hotfix-404\"}}"}
+{"question": "history for tag v1.1 as oneline with graph", "answer": "{\"name\": \"git_log\", \"parameters\": {\"ref\": \"v1.1\", \"oneline\": true, \"graph\": true}}"}

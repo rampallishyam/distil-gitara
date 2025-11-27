@@ -1,0 +1,29 @@
+[project]
+name = "gitara"
+version = "0.1.0"
+description = "Git Assistant - Convert natural language to git commands"
+readme = "README.md"
+authors = [{ name = "Maciej Gryka", email = "maciej@distillabs.ai" }]
+requires-python = ">=3.13"
+dependencies = [
+    "click>=8.2.1",
+    "openai>=1.102.0",
+]
+
+[project.scripts]
+gitara = "gitara.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.8.13,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.17.1",
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.1",
+    "ruff>=0.13.0",
+]
+
+[tool.ruff]
+line-length = 120

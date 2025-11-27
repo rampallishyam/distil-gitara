@@ -1,0 +1,10 @@
+[env]
+_.file = '.env'
+_.python.venv = { path = ".venv" }
+
+[tools]
+python = '3.13.7'
+
+[settings]
+python.uv_venv_auto = true
+experimental = true

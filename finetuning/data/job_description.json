@@ -1,0 +1,387 @@
+{
+  "task_description": "Respond with the next git operation tool call based on the desired action",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "git_status",
+        "description": "Check the current status of the repository (modified files, staged changes, branch info)",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "verbose": {
+              "type": "boolean",
+              "description": "Show detailed status including diffs",
+              "default": false
+            },
+            "ignored": {
+              "type": "boolean",
+              "description": "Show ignored files",
+              "default": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_add",
+        "description": "Stage files for commit",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "files": {
+              "type": "array",
+              "description": "List of file paths to stage (use ['.'] for all files)",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            }
+          },
+          "required": ["files"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_commit",
+        "description": "Create a commit with staged changes",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "description": "Commit message describing the changes (required unless amend=true)",
+              "minLength": 1
+            },
+            "amend": {
+              "type": "boolean",
+              "description": "Amend the previous commit instead of creating new one",
+              "default": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_push",
+        "description": "Push commits to remote repository",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "remote": {
+              "type": "string",
+              "description": "Remote name",
+              "default": "origin"
+            },
+            "branch": {
+              "type": "string",
+              "description": "Branch name (current branch if not specified)"
+            },
+            "force": {
+              "type": "boolean",
+              "description": "Force push (use with caution)",
+              "default": false
+            },
+            "set_upstream": {
+              "type": "boolean",
+              "description": "Set upstream tracking for the branch",
+              "default": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_pull",
+        "description": "Pull changes from remote repository",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "remote": {
+              "type": "string",
+              "description": "Remote name",
+              "default": "origin"
+            },
+            "branch": {
+              "type": "string",
+              "description": "Branch name (current branch if not specified)"
+            },
+            "rebase": {
+              "type": "boolean",
+              "description": "Rebase instead of merge",
+              "default": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_branch",
+        "description": "List, or delete branches (use `git_switch` for branch creation)",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "description": "Action to perform",
+              "enum": ["delete", "list"]
+            },
+            "branch_name": {
+              "type": "string",
+              "description": "Name of the branch (required for delete)"
+            },
+            "force": {
+              "type": "boolean",
+              "description": "Force delete even if not merged (only for delete action)",
+              "default": false
+            },
+            "all": {
+              "type": "boolean",
+              "description": "Show all branches including remotes (only for list action)",
+              "default": false
+            }
+          },
+          "required": ["action"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_switch",
+        "description": "Switch to a different branch",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "branch": {
+              "type": "string",
+              "description": "Branch name to switch to (not needed if detach is true)"
+            },
+            "create": {
+              "type": "boolean",
+              "description": "Create new branch before switching",
+              "default": false
+            },
+            "detach": {
+              "type": "boolean",
+              "description": "Switch to a commit in detached HEAD state",
+              "default": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_restore",
+        "description": "Restore files in working tree and/or staging area",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "files": {
+              "type": "array",
+              "description": "List of file paths to restore",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "source": {
+              "type": "string",
+              "description": "Restore source (e.g., HEAD, commit hash)",
+              "default": "HEAD"
+            },
+            "restore_target": {
+                "type": "string",
+                "enum": ["worktree", "staged", "both"],
+                "default": "worktree"
+              }
+          },
+          "required": ["files"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_merge",
+        "description": "Merge branches together",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "branch": {
+              "type": "string",
+              "description": "Branch to merge into current branch"
+            },
+            "no_ff": {
+              "type": "boolean",
+              "description": "Always create a merge commit, even if fast-forward is possible",
+              "default": false
+            },
+            "ff_only": {
+              "type": "boolean",
+              "description": "Only allow fast-forward merges (fail if not possible)",
+              "default": false
+            },
+            "strategy": {
+              "type": "string",
+              "description": "Merge strategy to use",
+              "enum": ["recursive", "resolve", "ours", "subtree"],
+              "default": "recursive"
+            }
+          },
+          "required": ["branch"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_stash",
+        "description": "Temporarily save uncommitted changes",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "description": "Stash operation",
+              "enum": ["save", "pop", "apply", "list", "drop", "clear", "show"]
+            },
+            "message": {
+              "type": "string",
+              "description": "Message for stash save (only for save action)"
+            },
+            "stash_ref": {
+              "type": "string",
+              "description": "Stash reference (e.g., 'stash@{0}', 'stash@{2}') for pop/apply/drop/show actions",
+              "default": "stash@{0}"
+            },
+            "include_untracked": {
+              "type": "boolean",
+              "description": "Include untracked files in stash (only for save action)",
+              "default": false
+            },
+            "patch": {
+              "type": "boolean",
+              "description": "Show full patch/diff when using action=show",
+              "default": false
+            }
+          },
+          "required": ["action"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_rebase",
+        "description": "Reapply commits on top of another base",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "target": {
+              "type": "string",
+              "description": "Target branch or commit to rebase onto (required unless continue or abort are true)"
+            },
+            "continue": {
+              "type": "boolean",
+              "description": "Continue after resolving conflicts",
+              "default": false
+            },
+            "abort": {
+              "type": "boolean",
+              "description": "Abort the rebase operation",
+              "default": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_reset",
+        "description": "Reset current HEAD to specified state",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "type": "string",
+              "description": "Reset mode",
+              "enum": ["soft", "mixed", "hard"]
+            },
+            "target": {
+              "type": "string",
+              "description": "Commit hash or reference (e.g., HEAD~1)",
+              "default": "HEAD"
+            }
+          },
+          "required": ["mode"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "git_log",
+        "description": "View commit history",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "type": "string",
+              "description": "Branch, tag, or commit to show history for (default: current branch)"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "Number of commits to show",
+              "default": 10,
+              "minimum": 1
+            },
+            "oneline": {
+              "type": "boolean",
+              "description": "Condensed one-line format",
+              "default": false
+            },
+            "graph": {
+              "type": "boolean",
+              "description": "Show branch graph",
+              "default": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}
