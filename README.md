@@ -1,7 +1,7 @@
 # GitAra 🦜🎸: **A small function-calling git agent you can run locally**
 ![gitara](gitara.png)
 
-*Gitara = **git** + **ara** (the parrot): your local stochastic parrot for git commands (with a knack for music).*
+*Gitara = **git** + **ara**: your local stochastic parrot for git commands (with a knack for music).*
 
 We fine-tuned a small, tool-calling language model to turn plain English into `git` commands with the accuracy of a cloud LLM. Because it's small, you can run it locally on your own machine - no API keys, no cloud dependencies, full privacy.
 
