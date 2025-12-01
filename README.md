@@ -13,7 +13,7 @@ We fine-tuned a small, tool-calling language model to turn plain English into `g
 | Llama 3.2 3B Instruct (base) | 3B | 0.12 +/- 0.05 |  |
 | Llama 3.2 1B Instruct (base) | 1B | 0.0 +/- 0.01 |  |
 
-The tuned 3B model matches the 120B teacher while being **25x smaller** while the 1B model is **within one standard deviation while being 120x smaller.**
+The tuned 3B model matches the 120B teacher while being **25x smaller** while the 1B model is **within one standard deviation while being 120x smaller.** You can find all models in our [huggingface collection](https://huggingface.co/collections/distil-labs/distil-gitara)
 
 ---
 
