@@ -29,6 +29,7 @@ Install [Ollama](https://ollama.com/) following the instructions on their websit
 python -m venv .venv
 . .venv/bin/activate
 pip install huggingface_hub openai
+pip install -e .
 
 ```
 
@@ -44,7 +45,7 @@ ollama create gitara -f Modelfile
 ### 4. Run gitara
 
 ```bash
-python gitara.py "your git question here"
+gitara "your git question here"
 
 ```
 
@@ -53,22 +54,22 @@ python gitara.py "your git question here"
 Gitara translates natural language into git commands. It **prints the command but does not execute it** so you stay in control.
 
 ```bash
-> python gitara.py "what's in the latest stash, show diff"
+> gitara "what's in the latest stash, show diff"
 git stash show --patch
 
-> python gitara.py "push feature-x to origin, override any changes there and track it"
+> gitara "push feature-x to origin, override any changes there and track it"
 git push origin feature-x --force --set-upstream
 
-> python gitara.py "show staged changes with diffs"
+> gitara "show staged changes with diffs"
 git status --verbose
 
-> python gitara.py "undo last commit but keep the changes"
+> gitara "undo last commit but keep the changes"
 git reset --soft HEAD~1
 
-> python gitara.py "show 8 commits for current branch with graph"
+> gitara "show 8 commits for current branch with graph"
 git log -n 8 --graph
 
-> python gitara.py "merge vendor branch preferring ours"
+> gitara "merge vendor branch preferring ours"
 git merge vendor --strategy ours
 
 ```

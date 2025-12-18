@@ -6,7 +6,7 @@ import click
 from gitara.model_client import DistilLabsLLM
 from gitara.renderer import render_git_command
 
-MODEL = "hf.co/distil-labs/Llama-3_2-gitara-3B"
+MODEL = "gitara"
 PORT = 11434
 
 
